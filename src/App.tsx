@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { db } from "./config/firestore";
 import { doc, getDoc } from "firebase/firestore";
-import "./App.css";
+import "./App.scss";
+import "./scss/buttons.scss";
 import Navigation from "./components/navigation/Navigation";
+import MainContent from "./components/mainContent/MainContent";
 
 function App() {
   const [planetData, setPlanetData] = useState<any | null>(null); // State to store the currently selected planet data
@@ -29,16 +31,10 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="wrapper">
       <Navigation handleButtonClick={handleButtonClick} />
-      <div>
-        {planetData && (
-          <div>
-            <h2>{planetData.planet}</h2>
-            <p>{planetData.overview}</p>
-            <img src={planetData.overviewImage} alt="" />
-          </div>
-        )}
+      <div className="container">
+        {planetData && <MainContent planetData={planetData} />}
       </div>
     </div>
   );
