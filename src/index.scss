@@ -1,0 +1,67 @@
+@import "./scss/fonts.scss";
+@import "./scss/colors.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $whiteColor;
+}
+
+body {
+  background: $darkPurpleColor;
+}
+
+image {
+  width: 100%;
+}
+
+button {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-family: $antonioFont;
+  font-size: 80px;
+  line-height: 103px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: $antonioFont;
+  font-size: 40px;
+  line-height: 52px;
+  font-weight: 400;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-family: $spartanFont;
+  font-size: 12px;
+  line-height: 25px;
+  font-weight: 700;
+  letter-spacing: 2.6px;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-family: $spartanFont;
+  font-size: 11px;
+  line-height: 25px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.description {
+  font-family: $spartanFont;
+  font-size: 14px;
+  line-height: 25px;
+  font-weight: 400;
+}
