@@ -1,0 +1,31 @@
+@import "./colors.scss";
+@import "./fonts.scss";
+
+.button {
+  font-family: $spartanFont;
+  text-align: left;
+  font-size: 12px;
+  line-height: 25px;
+  letter-spacing: 2.6px;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  width: 350px;
+  padding: 12px 0;
+  border: 1px solid $tranparentWhite;
+
+  span {
+    color: $lightGrayColor;
+    margin: 0 28px;
+  }
+
+  &:hover {
+    background: $darkGrayColor;
+    border-color: $darkGrayColor;
+  }
+
+  &:active {
+    background: $cyanColor;
+    border-color: $cyanColor;
+  }
+}
