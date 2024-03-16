@@ -1,30 +1,59 @@
+import { useState } from "react";
+import Button from "../button/Button";
 import styles from "./MainContent.module.scss";
 
 const MainContent = ({ planetData }: any) => {
+  const [activeAccordion, setActiveAccordion] = useState<number | null>(1);
+
   return (
     <div>
       <div className={styles.row}>
-        <img src={planetData.image} />
+        {activeAccordion === 1 && (
+          <img className={styles.image} src={planetData.image} />
+        )}
+        {activeAccordion === 2 && (
+          <img className={styles.image} src={planetData.structureImage} />
+        )}
+        {activeAccordion === 3 && (
+          <div className={styles.imageContent}>
+            <img className={styles.image} src={planetData.image} />
+            <img className={styles.realImage} src={planetData.realPic} alt="" />
+          </div>
+        )}
+
         <div className={styles.content}>
           <h1>{planetData.planet}</h1>
-          <p className="description">{planetData.overview}</p>
+          <p className="description">
+            {activeAccordion === 1 && planetData.overview}
+            {activeAccordion === 2 && planetData.internalStructure}
+            {activeAccordion === 3 && planetData.surfaceGeology}
+          </p>
           <span className={styles.link}>
-            Source: <a href="#">Wikipedia</a>
+            Source:{" "}
+            <a href={planetData.wikipedia} target="_blank">
+              Wikipedia
+            </a>
             <i className="fa-solid fa-square-arrow-up-right"></i>
           </span>
           <div className={styles.accordion}>
-            <button className="button">
-              <span>01</span>
-              overview
-            </button>
-            <button className="button">
-              <span>02</span>
-              Internal Structure
-            </button>
-            <button className="button">
-              <span>03</span>
-              Surface Geology
-            </button>
+            <Button
+              state={1}
+              title="overview"
+              activeAccordion={activeAccordion}
+              setActiveAccordion={setActiveAccordion}
+            />
+            <Button
+              state={2}
+              title="internal structure"
+              activeAccordion={activeAccordion}
+              setActiveAccordion={setActiveAccordion}
+            />
+            <Button
+              state={3}
+              title="surface geology"
+              activeAccordion={activeAccordion}
+              setActiveAccordion={setActiveAccordion}
+            />
           </div>
         </div>
       </div>
