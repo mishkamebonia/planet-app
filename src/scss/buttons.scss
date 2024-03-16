@@ -1,5 +1,6 @@
 @import "./colors.scss";
 @import "./fonts.scss";
+@import "./mixins.scss";
 
 .button {
   font-family: $spartanFont;
@@ -23,14 +24,29 @@
     background: $darkGrayColor;
     border-color: $darkGrayColor;
   }
-
-  &:active {
-    background: $cyanColor;
-    border-color: $cyanColor;
-  }
 }
 
-.active-btn {
-  background: $cyanColor;
-  border-color: $cyanColor;
+.active-btn.mercury {
+  @include background-color($cyanColor);
+}
+.active-btn.venus {
+  @include background-color($yellowColor);
+}
+.active-btn.earth {
+  @include background-color($purpleColor);
+}
+.active-btn.mars {
+  @include background-color($brickColor);
+}
+.active-btn.jupiter {
+  @include background-color($redColor);
+}
+.active-btn.saturn {
+  @include background-color($orangeColor);
+}
+.active-btn.uranus {
+  @include background-color($greenColor);
+}
+.active-btn.neptune {
+  @include background-color($blueColor);
 }
