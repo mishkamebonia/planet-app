@@ -1,8 +1,11 @@
 @import "./scss/colors.scss";
 
 .wrapper {
+  background-image: url("./assets/starsBg.svg");
+  background-size: contain;
 }
 
 .container {
-  margin: 0 160px 56px;
+  margin: 0 auto 56px;
+  max-width: 1110px;
 }
