@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { db } from "./config/firestore";
 import { doc, getDoc } from "firebase/firestore";
 import "./App.scss";
@@ -7,9 +7,8 @@ import Navigation from "./components/navigation/Navigation";
 import MainContent from "./components/mainContent/MainContent";
 
 function App() {
-  const [planetData, setPlanetData] = useState<any | null>(null); // State to store the currently selected planet data
+  const [planetData, setPlanetData] = useState<any | null>(null);
 
-  // Function to fetch planet data based on the planet ID
   const fetchPlanetData = async (planetId: string) => {
     try {
       const planetDoc = doc(db, "planets", planetId);
@@ -25,10 +24,13 @@ function App() {
     }
   };
 
-  // Handle button click event
   const handleButtonClick = (planetId: string) => {
-    fetchPlanetData(planetId); // Fetch planet data when a button is clicked
+    fetchPlanetData(planetId);
   };
+
+  useEffect(() => {
+    handleButtonClick("mercury");
+  }, []);
 
   return (
     <div className="wrapper">
