@@ -1,5 +1,6 @@
 @import "../../scss/fonts.scss";
 @import "../../scss/colors.scss";
+@import "../../scss/mixins.scss";
 
 .nav {
   display: flex;
@@ -32,7 +33,33 @@
 
     &:hover {
       color: $whiteColor;
-      border-top: 4px solid red;
+      border-top-width: 4px;
+      border-top-style: solid;
     }
   }
+}
+
+.mercury {
+  @include border-style($cyanColor);
+}
+.venus {
+  @include border-style($yellowColor);
+}
+.earth {
+  @include border-style($purpleColor);
+}
+.mars {
+  @include border-style($brickColor);
+}
+.jupiter {
+  @include border-style($redColor);
+}
+.saturn {
+  @include border-style($orangeColor);
+}
+.uranus {
+  @include border-style($greenColor);
+}
+.neptune {
+  @include border-style($blueColor);
 }
