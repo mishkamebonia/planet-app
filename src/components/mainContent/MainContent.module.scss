@@ -22,9 +22,7 @@
   width: auto;
   max-width: 800px;
   display: block;
-  animation-name: spin;
-  animation-duration: 60s;
-  animation-iteration-count: infinite;
+  animation: spin 30s linear infinite;
 }
 
 .imageContent {
