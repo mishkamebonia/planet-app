@@ -39,18 +39,21 @@ const MainContent = ({ planetData }: any) => {
             <Button
               state={1}
               title="overview"
+              name={planetData.planet}
               activeAccordion={activeAccordion}
               setActiveAccordion={setActiveAccordion}
             />
             <Button
               state={2}
               title="internal structure"
+              name={planetData.planet}
               activeAccordion={activeAccordion}
               setActiveAccordion={setActiveAccordion}
             />
             <Button
               state={3}
               title="surface geology"
+              name={planetData.planet}
               activeAccordion={activeAccordion}
               setActiveAccordion={setActiveAccordion}
             />
