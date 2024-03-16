@@ -9,28 +9,52 @@ const Navigation: React.FC<{ handleButtonClick: HandleButtonClick }> = ({
     <nav className={styles.nav}>
       <p className={styles.logo}>the planets</p>
       <div className={styles.row}>
-        <button onClick={() => handleButtonClick("mercury")}>
+        <button
+          className={styles.mercury}
+          onClick={() => handleButtonClick("mercury")}
+        >
           <h4>Mercury</h4>
         </button>
-        <button onClick={() => handleButtonClick("venus")}>
+        <button
+          className={styles.venus}
+          onClick={() => handleButtonClick("venus")}
+        >
           <h4>Venus</h4>
         </button>
-        <button onClick={() => handleButtonClick("earth")}>
+        <button
+          className={styles.earth}
+          onClick={() => handleButtonClick("earth")}
+        >
           <h4>Earth</h4>
         </button>
-        <button onClick={() => handleButtonClick("mars")}>
+        <button
+          className={styles.mars}
+          onClick={() => handleButtonClick("mars")}
+        >
           <h4>Mars</h4>
         </button>
-        <button onClick={() => handleButtonClick("jupiter")}>
+        <button
+          className={styles.jupiter}
+          onClick={() => handleButtonClick("jupiter")}
+        >
           <h4>Jupiter</h4>
         </button>
-        <button onClick={() => handleButtonClick("saturn")}>
+        <button
+          className={styles.saturn}
+          onClick={() => handleButtonClick("saturn")}
+        >
           <h4>Saturn</h4>
         </button>
-        <button onClick={() => handleButtonClick("uranus")}>
+        <button
+          className={styles.uranus}
+          onClick={() => handleButtonClick("uranus")}
+        >
           <h4>Uranus</h4>
         </button>
-        <button onClick={() => handleButtonClick("neptune")}>
+        <button
+          className={styles.neptune}
+          onClick={() => handleButtonClick("neptune")}
+        >
           <h4>Neptune</h4>
         </button>
       </div>
