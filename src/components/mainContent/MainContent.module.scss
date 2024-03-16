@@ -1,5 +1,6 @@
 @import "../../scss/colors.scss";
 @import "../../scss/fonts.scss";
+@import "../../scss/animations.scss";
 
 .row {
   display: flex;
@@ -9,11 +10,38 @@
 
 .content {
   width: 350px;
+  align-self: flex-start;
 
   h1,
   p {
     margin-bottom: 23px;
   }
+}
+
+.image {
+  width: auto;
+  max-width: 800px;
+  display: block;
+  animation-name: spin;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+}
+
+.imageContent {
+  position: relative;
+}
+
+.realImage {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 130px;
+  border-radius: 100%;
+  object-fit: cover;
+  border: 5px solid $whiteColor;
+  outline: 10px solid $cyanColor;
 }
 
 .link {
