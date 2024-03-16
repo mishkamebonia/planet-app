@@ -1,0 +1,8 @@
+@mixin border-style($borderColor) {
+  border-top-color: ($borderColor);
+}
+
+@mixin background-color($color) {
+  background: ($color);
+  border-color: ($color);
+}
