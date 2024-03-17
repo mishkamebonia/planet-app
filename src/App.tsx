@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { db } from "./config/firestore";
+import { db } from "./config/firebase";
 import { doc, getDoc } from "firebase/firestore";
 import "./App.scss";
 import "./scss/buttons.scss";
