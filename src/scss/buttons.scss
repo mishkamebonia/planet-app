@@ -11,7 +11,7 @@
   font-weight: 700;
   text-transform: uppercase;
 
-  width: 350px;
+  max-width: 350px;
   padding: 12px 0;
   border: 1px solid $tranparentWhite;
 
@@ -49,4 +49,31 @@
 }
 .active-btn.neptune {
   @include background-color($blueColor);
+}
+
+@media only screen and (max-width: 768px) {
+  .active-btn.mercury {
+    @include border-bottom-style($cyanColor);
+  }
+  .active-btn.venus {
+    @include border-bottom-style($yellowColor);
+  }
+  .active-btn.earth {
+    @include border-bottom-style($purpleColor);
+  }
+  .active-btn.mars {
+    @include border-bottom-style($brickColor);
+  }
+  .active-btn.jupiter {
+    @include border-bottom-style($redColor);
+  }
+  .active-btn.saturn {
+    @include border-bottom-style($orangeColor);
+  }
+  .active-btn.uranus {
+    @include border-bottom-style($greenColor);
+  }
+  .active-btn.neptune {
+    @include border-bottom-style($blueColor);
+  }
 }
