@@ -1,0 +1,60 @@
+@import "../../scss/colors.scss";
+
+.accordion {
+  margin-top: 40px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.accordionLinks {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 100px;
+  border-bottom: 1px solid $tranparentWhite;
+
+  button {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom-width: 4px;
+
+    background: transparent;
+  }
+
+  span {
+    display: none;
+  }
+
+  .active-btn {
+    background: transparent;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .accordion {
+    display: none;
+  }
+
+  .accordionLinks {
+    display: flex;
+    padding: 0 24px;
+
+    button {
+      font-size: 9px;
+      border-bottom: none;
+
+      &:hover {
+        background: transparent;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .accordion {
+    margin-top: 0;
+  }
+}
