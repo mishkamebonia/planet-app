@@ -1,12 +1,20 @@
 import { useState } from "react";
-import Button from "../button/Button";
 import styles from "./MainContent.module.scss";
+import Accordion from "../accordion/Accordion";
 
 const MainContent = ({ planetData }: any) => {
   const [activeAccordion, setActiveAccordion] = useState<number | null>(1);
-
   return (
     <div>
+      <Accordion
+        name={planetData.planet}
+        firstOption="overview"
+        secondOption="structure"
+        thirdOption="surface"
+        accordionClass="accordionLinks"
+        activeAccordion={activeAccordion}
+        setActiveAccordion={setActiveAccordion}
+      />
       <div className={styles.row}>
         {activeAccordion === 1 && (
           <img className={styles.image} src={planetData.image} />
@@ -22,42 +30,30 @@ const MainContent = ({ planetData }: any) => {
         )}
 
         <div className={styles.content}>
-          <h1>{planetData.planet}</h1>
-          <p className="description">
-            {activeAccordion === 1 && planetData.overview}
-            {activeAccordion === 2 && planetData.internalStructure}
-            {activeAccordion === 3 && planetData.surfaceGeology}
-          </p>
-          <span className={styles.link}>
-            Source:{" "}
-            <a href={planetData.wikipedia} target="_blank">
-              Wikipedia
-            </a>
-            <i className="fa-solid fa-square-arrow-up-right"></i>
-          </span>
-          <div className={styles.accordion}>
-            <Button
-              state={1}
-              title="overview"
-              name={planetData.planet}
-              activeAccordion={activeAccordion}
-              setActiveAccordion={setActiveAccordion}
-            />
-            <Button
-              state={2}
-              title="internal structure"
-              name={planetData.planet}
-              activeAccordion={activeAccordion}
-              setActiveAccordion={setActiveAccordion}
-            />
-            <Button
-              state={3}
-              title="surface geology"
-              name={planetData.planet}
-              activeAccordion={activeAccordion}
-              setActiveAccordion={setActiveAccordion}
-            />
+          <div className={styles.info}>
+            <h1>{planetData.planet}</h1>
+            <p className="description">
+              {activeAccordion === 1 && planetData.overview}
+              {activeAccordion === 2 && planetData.internalStructure}
+              {activeAccordion === 3 && planetData.surfaceGeology}
+            </p>
+            <span className={styles.link}>
+              Source:{" "}
+              <a href={planetData.wikipedia} target="_blank">
+                Wikipedia
+              </a>
+              <i className="fa-solid fa-square-arrow-up-right"></i>
+            </span>
           </div>
+          <Accordion
+            name={planetData.planet}
+            firstOption="overview"
+            secondOption="internal structure"
+            thirdOption="surface geology"
+            accordionClass="accordion"
+            activeAccordion={activeAccordion}
+            setActiveAccordion={setActiveAccordion}
+          />
         </div>
       </div>
       <div className={styles.details}>
