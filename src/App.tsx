@@ -5,9 +5,12 @@ import "./App.scss";
 import "./scss/buttons.scss";
 import Navigation from "./components/navigation/Navigation";
 import MainContent from "./components/mainContent/MainContent";
+import { useMenu } from "./providers/hamburgerMenu";
+import Menu from "./components/menu/Menu";
 
 function App() {
   const [planetData, setPlanetData] = useState<any | null>(null);
+  const { isMenuActive, setIsMenuActive } = useMenu();
 
   const fetchPlanetData = async (planetId: string) => {
     try {
@@ -26,6 +29,7 @@ function App() {
 
   const handleButtonClick = (planetId: string) => {
     fetchPlanetData(planetId);
+    setIsMenuActive(false);
   };
 
   useEffect(() => {
@@ -34,9 +38,13 @@ function App() {
 
   return (
     <div className="wrapper">
-      <Navigation handleButtonClick={handleButtonClick} />
       <div className="container">
-        {planetData && <MainContent planetData={planetData} />}
+        <Navigation handleButtonClick={handleButtonClick} />
+        {isMenuActive ? (
+          <Menu handleButtonClick={handleButtonClick} />
+        ) : (
+          planetData && <MainContent planetData={planetData} />
+        )}
       </div>
     </div>
   );
