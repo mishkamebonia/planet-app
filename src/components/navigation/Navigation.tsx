@@ -1,3 +1,4 @@
+import HamburgerMenu from "../hamburgerMenu/HamburgerMenu";
 import styles from "./Navigation.module.scss";
 
 type HandleButtonClick = (planetId: string) => void;
@@ -58,6 +59,7 @@ const Navigation: React.FC<{ handleButtonClick: HandleButtonClick }> = ({
           <h4>Neptune</h4>
         </button>
       </div>
+      <HamburgerMenu />
     </nav>
   );
 };

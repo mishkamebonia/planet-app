@@ -1,0 +1,72 @@
+@import "../../scss/colors.scss";
+@import "../../scss/mixins.scss";
+
+.menu {
+  display: none;
+  padding: 0 24px;
+  margin-top: 45px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.button {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid $tranparentWhite;
+
+  h4 {
+    font-size: 15px;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.icon {
+  color: $tranparentWhite;
+}
+
+.cyrcle {
+  font-size: 20px;
+}
+
+.mercury {
+  @include color($cyanColor);
+}
+.venus {
+  @include color($yellowColor);
+}
+.earth {
+  @include color($purpleColor);
+}
+.mars {
+  @include color($brickColor);
+}
+.jupiter {
+  @include color($redColor);
+}
+.saturn {
+  @include color($orangeColor);
+}
+.uranus {
+  @include color($greenColor);
+}
+.neptune {
+  @include color($blueColor);
+}
+
+@media only screen and (max-width: 768px) {
+  .menu {
+    display: flex;
+    flex-direction: column;
+  }
+}
