@@ -65,3 +65,24 @@ h4 {
   line-height: 25px;
   font-weight: 400;
 }
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h4 {
+    font-size: 8px;
+  }
+
+  .description {
+    font-size: 11px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+}
