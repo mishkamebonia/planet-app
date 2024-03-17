@@ -13,11 +13,11 @@ const Button = ({
   activeAccordion,
   setActiveAccordion,
 }: Props) => {
-  function toggleChange(index: number) {
+  const toggleChange = (index: number) => {
     if (index !== activeAccordion) {
       setActiveAccordion(index);
     }
-  }
+  };
 
   return (
     <>
