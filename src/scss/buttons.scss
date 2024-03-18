@@ -15,9 +15,14 @@
   padding: 12px 0;
   border: 1px solid $tranparentWhite;
 
-  span {
+  span:first-child {
     color: $lightGrayColor;
     margin: 0 28px;
+  }
+
+  span:last-child {
+    columns: $whiteColor;
+    padding-right: 28px;
   }
 
   &:hover {
