@@ -13,7 +13,6 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 100px;
-  border-bottom: 1px solid $tranparentWhite;
 
   button {
     border-top: none;
@@ -24,8 +23,12 @@
     background: transparent;
   }
 
-  span {
+  span:first-child {
     display: none;
+  }
+
+  span:last-child {
+    padding-right: 0;
   }
 
   .active-btn {
@@ -40,7 +43,6 @@
 
   .accordionLinks {
     display: flex;
-    padding: 0 24px;
 
     button {
       font-size: 9px;
