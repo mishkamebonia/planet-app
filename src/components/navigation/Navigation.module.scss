@@ -28,6 +28,8 @@
     color: $tranparentWhite;
     height: 65px;
 
+    transition: $transition;
+
     &:hover {
       color: $whiteColor;
       border-top-width: 4px;
