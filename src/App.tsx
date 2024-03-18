@@ -46,6 +46,8 @@ function App() {
           planetData && <MainContent planetData={planetData} />
         )}
       </div>
+      <div className="navigationLine"></div>
+      {isMenuActive || <div className="optionLine"></div>}
     </div>
   );
 }
