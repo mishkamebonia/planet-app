@@ -28,7 +28,7 @@ const Button = ({
         onClick={() => toggleChange(state)}
       >
         <span>0{state}</span>
-        {title}
+        <span>{title}</span>
       </button>
     </>
   );
