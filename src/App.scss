@@ -1,4 +1,5 @@
 @import "./scss/colors.scss";
+@import "./scss/mixins.scss";
 
 .wrapper {
   background-image: url("./assets/starsBg.svg");
@@ -7,6 +8,34 @@
 
 .container {
   margin: 0 auto 56px;
+  position: relative;
+}
+
+.navigationLine {
+  @include line(66px);
+}
+.optionLine {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    margin: 0 24px 56px;
+  }
+
+  .navigationLine {
+    @include line(64px);
+  }
+  .optionLine {
+    display: block;
+    @include line(117px);
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    margin: 0 40px 56px;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
