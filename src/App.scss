@@ -1,5 +1,6 @@
 @import "./scss/colors.scss";
 @import "./scss/mixins.scss";
+@import "./scss/variables.scss";
 
 .wrapper {
   background-image: url("./assets/starsBg.svg");
@@ -16,6 +17,12 @@
 }
 .optionLine {
   display: none;
+}
+
+@each $planet, $color in $planetColors {
+  .#{$planet} {
+    @include outlineColor($color);
+  }
 }
 
 @media only screen and (max-width: 768px) {
