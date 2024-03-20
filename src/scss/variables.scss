@@ -1,0 +1,12 @@
+@import "./colors.scss";
+
+$planetColors: (
+  mercury: $cyanColor,
+  venus: $yellowColor,
+  earth: $purpleColor,
+  mars: $brickColor,
+  jupiter: $redColor,
+  saturn: $orangeColor,
+  uranus: $greenColor,
+  neptune: $blueColor,
+);
