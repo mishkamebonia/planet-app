@@ -4,6 +4,7 @@ import Accordion from "../accordion/Accordion";
 
 const MainContent = ({ planetData }: any) => {
   const [activeAccordion, setActiveAccordion] = useState<number | null>(1);
+
   return (
     <div>
       <Accordion
@@ -25,7 +26,11 @@ const MainContent = ({ planetData }: any) => {
         {activeAccordion === 3 && (
           <div className={styles.imageContent}>
             <img className={styles.image} src={planetData.image} />
-            <img className={styles.realImage} src={planetData.realPic} alt="" />
+            <img
+              className={`${styles.realImage} ${planetData.planet}`}
+              src={planetData.realPic}
+              alt=""
+            />
           </div>
         )}
 
