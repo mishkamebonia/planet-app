@@ -1,6 +1,7 @@
 @import "./colors.scss";
 @import "./fonts.scss";
 @import "./mixins.scss";
+@import "./variables.scss";
 
 .button {
   font-family: $spartanFont;
@@ -33,54 +34,12 @@
   }
 }
 
-.active-btn.mercury {
-  @include background-color($cyanColor);
-}
-.active-btn.venus {
-  @include background-color($yellowColor);
-}
-.active-btn.earth {
-  @include background-color($purpleColor);
-}
-.active-btn.mars {
-  @include background-color($brickColor);
-}
-.active-btn.jupiter {
-  @include background-color($redColor);
-}
-.active-btn.saturn {
-  @include background-color($orangeColor);
-}
-.active-btn.uranus {
-  @include background-color($greenColor);
-}
-.active-btn.neptune {
-  @include background-color($blueColor);
-}
+@each $planet, $color in $planetColors {
+  .active-btn.#{$planet} {
+    @include background-color($color);
 
-@media only screen and (max-width: 768px) {
-  .active-btn.mercury {
-    @include border-bottom-style($cyanColor);
-  }
-  .active-btn.venus {
-    @include border-bottom-style($yellowColor);
-  }
-  .active-btn.earth {
-    @include border-bottom-style($purpleColor);
-  }
-  .active-btn.mars {
-    @include border-bottom-style($brickColor);
-  }
-  .active-btn.jupiter {
-    @include border-bottom-style($redColor);
-  }
-  .active-btn.saturn {
-    @include border-bottom-style($orangeColor);
-  }
-  .active-btn.uranus {
-    @include border-bottom-style($greenColor);
-  }
-  .active-btn.neptune {
-    @include border-bottom-style($blueColor);
+    @media only screen and (max-width: 768px) {
+      @include border-bottom-style($color);
+    }
   }
 }
